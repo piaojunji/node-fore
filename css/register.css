@@ -1,0 +1,39 @@
+body{
+    background: rgb(4, 4, 36);
+}
+div{
+    width: 400px;
+    height: 500px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 50px auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+    padding: 80px 0;
+}
+label{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+.form-control{
+    width: 180px;
+    background-color: white !important;
+}
+.aa{
+    width: 230px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 600;
+}
+.aa span{
+    margin-right: 10px;
+}
+.button{
+    color:  rgb(4, 4, 36);
+    font-weight: 600;
+}

@@ -1,0 +1,19 @@
+.lv-main .main-r .table-hover > tbody > tr:hover {
+    background-color: #d5e7fc;
+  }
+  .lv-main .main-r .pagination {
+    float: right;
+  }
+  .lv-main .main-r .search-bar {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .lv-main .main-r .search-bar .btn-primary {
+    height: 32px;
+    padding: 3px 10px;
+    margin-left: 10px;
+  }
+  .lv-main .main-r nav {
+    margin-top: 50px;
+  }

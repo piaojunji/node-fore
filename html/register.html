@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>xx后台管理系统</title>
+    <link rel="stylesheet" href="../css/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/register.css">
+    <style>
+        body{
+            background: rgb(4, 4, 36);
+        }
+        form{
+            width: 400px;
+            height: 500px;
+            background: #fff;
+            border-radius: 20px;
+            margin: 50px auto;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content:space-around;
+            align-items: center;
+            padding: 80px 0;
+        }
+        label{
+            display: flex;
+            align-items: center;
+        }
+        .form-control{
+            width: 180px;
+            background-color: white !important;
+        }
+        .aa{
+            width: 230px;
+            display: flex;
+            justify-content: flex-start;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label>
+            <span>用户名:</span>
+            <input type="text" class="form-control" placeholder="请输入用户名">
+        </label>
+        <label>
+            <span>密 &ensp;码:</span>
+            <input type="password" class="form-control" placeholder="请输入密码">
+        </label>
+        <label>
+            <span>昵 &ensp;称:</span>
+            <input type="text" class="form-control" placeholder="请输入昵称">
+        </label>
+        <label>
+            <span>年 &ensp;龄:</span>
+            <input type="text" class="form-control" placeholder="请输入昵称">
+        </label>
+        <div class="aa">
+            <span>性 &ensp; 别:</span>
+            <input type="radio" name="age">男
+            <input type="radio" name="age">女
+        </div>
+        <div class="aa">
+            <span>管理员:</span>
+            <input type="radio" name="isAdmin">是
+            <input type="radio" name="isAdmin">否
+        </div>
+        <button class="btn button">注册</button>
+        <a href="login.html">已有账号,点击登录</a>
+    </div>
+</body>
+
+</html>
