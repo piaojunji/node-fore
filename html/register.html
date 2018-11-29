@@ -9,41 +9,10 @@
     <link rel="stylesheet" href="../css/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/register.css">
-    <style>
-        body{
-            background: rgb(4, 4, 36);
-        }
-        form{
-            width: 400px;
-            height: 500px;
-            background: #fff;
-            border-radius: 20px;
-            margin: 50px auto;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content:space-around;
-            align-items: center;
-            padding: 80px 0;
-        }
-        label{
-            display: flex;
-            align-items: center;
-        }
-        .form-control{
-            width: 180px;
-            background-color: white !important;
-        }
-        .aa{
-            width: 230px;
-            display: flex;
-            justify-content: flex-start;
-        }
-    </style>
 </head>
 
 <body>
-    <div>
+    <div class="box">
         <label>
             <span>用户名:</span>
             <input type="text" class="form-control" placeholder="请输入用户名">
@@ -54,25 +23,27 @@
         </label>
         <label>
             <span>昵 &ensp;称:</span>
-            <input type="text" class="form-control" placeholder="请输入昵称">
+            <input type="text" name="nickname" class="form-control" placeholder="请输入昵称">
         </label>
         <label>
             <span>年 &ensp;龄:</span>
-            <input type="text" class="form-control" placeholder="请输入昵称">
+            <input type="text" name="age" class="form-control" placeholder="请输入年龄">
         </label>
         <div class="aa">
             <span>性 &ensp; 别:</span>
-            <input type="radio" name="age">男
-            <input type="radio" name="age">女
+            <input type="radio" name="sex" value="男">男
+            <input type="radio" name="sex" value="女">女
         </div>
         <div class="aa">
             <span>管理员:</span>
-            <input type="radio" name="isAdmin">是
-            <input type="radio" name="isAdmin">否
+            <input type="radio" name="isAdmin" value="是">是
+            <input type="radio" name="isAdmin" value="否">否
         </div>
-        <button class="btn button">注册</button>
+        <button class="btn button" id="btn">注册</button>
         <a href="login.html">已有账号,点击登录</a>
     </div>
 </body>
 
 </html>
+<script src="../js/jquery/jquery.min.js"></script>
+<script src="../js/register.js"></script>

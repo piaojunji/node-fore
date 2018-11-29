@@ -1,5 +1,7 @@
+<link rel="stylesheet" href="../css/lib/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/users.css">
 <div class="search-bar">
-    <input type="text" class="form-control" style="width: 200px;">
+    <input type="text" class="form-control" style="width: 200px;display: inline-block">
     <button class="btn btn-primary">搜索</button>
 </div>
 <table class="table table-hover table-striped">
@@ -11,11 +13,11 @@
             <th>年龄</th>
             <th>性别</th>
             <th>是否管理员</th>
+            <th>操作</th>
         </tr>
     </thead>
-    <tbody>
-
-        <% for(var i = 0; i < list.length; i++) {%>
+    <tbody id="tbody">
+        <!-- <% for(var i = 0; i < list.length; i++) {%>
         <tr>
             <th scope="row">
                 <%= i+1 %>
@@ -36,26 +38,27 @@
                 <%= list[i].isAdmin %>
             </td>
         </tr>
-        <%}%>
-
+        <%}%> -->
     </tbody>
 </table>
 <nav>
-    <ul class="pagination">
-        <li>
+    <ul class="pagination" id="paginations">
+        <!-- <li>
             <a href="#" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
             </a>
-        </li>
-        <li class="active"><a href="#">1</a></li>
+        </li> -->
+        <!-- <li class="active"><a href="#">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
-        <li><a href="#">5</a></li>
-        <li>
+        <li><a href="#">5</a></li> -->
+        <!-- <li>
             <a href="#" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
             </a>
-        </li>
+        </li> -->
     </ul>
 </nav>
+<script src="../js/jquery/jquery.min.js"></script>
+<script src="../js/users.js"></script>
