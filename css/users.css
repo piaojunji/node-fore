@@ -1,5 +1,9 @@
-.lv-main .main-r .table-hover > tbody > tr:hover {
-    background-color: #d5e7fc;
+ .abc{
+   transition: 0.5s;
+ }
+ .abc:hover {
+    background-color: #002753 !important;
+    /* color:black; */
 }
 .lv-main .main-r .pagination {
   float: right;
@@ -27,4 +31,17 @@ nav{
   position: absolute;
   right: 0;
   bottom: 200px;
+}
+#tbody tr td a:hover{
+  cursor: pointer;
+}
+
+body{
+  background: rgb(4, 4, 36);
+  color: white
+}
+
+.cba{
+  background: rgb(4, 4, 36) !important;
+  transition: 0.5s;
 }

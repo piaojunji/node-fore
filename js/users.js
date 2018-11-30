@@ -1,8 +1,61 @@
 $(function () {
     getList();
+
+    //删除用户信息
+    setTimeout(function () {
+        $('.remove').each(function () {
+            $(this).click(function () {
+                var username = $(this).parent().siblings(".userName").html()
+                console.log(username)
+                $.get('http://127.0.0.1:3000/api/user/delete', {
+                    username: username
+                }, function (res) {
+                    if (res.code === 0) {
+                        // getList(PAGE)
+                        location.href = "http://127.0.0.1:8080/html/users.html"
+                    } else {
+                        alert(res.msg)
+                    }
+                })
+            })
+        })
+    }, 20)
+
+    //搜索用户信息
+    $('#searchBtn').click(function () {
+        $.get('http://127.0.0.1:3000/api/user/search', {
+            name: $('#searchInput').val()
+        }, function (res) {
+            console.log(res);
+            if (res.code === 0) {
+                var list = res.data.list;
+                var TB = ''
+
+                //获取搜索后的用户信息
+                for (var i = 0; i < list.length; i++) {
+                    TB += `
+                            <tr>
+                                <th scope="row">${i + 1}</th>
+                                <td class = "userName">${list[i].username}</td>
+                                <td>${list[i].nickname}</td>
+                                <td>${list[i].age}</td>
+                                <td>${list[i].sex}</td>
+                                <td class="ADMIN">${list[i].isAdmin}</td>
+                                <td><a class="remove">删除</a></td>
+                            </tr>
+                        `
+                }
+                $('#tbody').html(TB);
+            } else {
+                alert(res.msg)
+            }
+        })
+    })
 })
 
+//自定义一个page
 var PAGE = 1
+
 //获取用户列表
 function getList(page, pageSize) {
     //初始化处理
@@ -12,29 +65,52 @@ function getList(page, pageSize) {
         page: page,
         pageSize: pageSize
     }, function (res) {
-
         if (res.code === 0) {
             var list = res.data.list;
             var totalPage = res.data.totalPage;
             var TB = ''
             var pagination = ''
+
             //获取用户信息
             for (var i = 0; i < list.length; i++) {
                 TB += `
                     <tr>
                         <th scope="row">${i + pageSize * PAGE - pageSize + 1}</th>
-                        <td>${list[i].username}</td>
+                        <td class = "userName">${list[i].username}</td>
                         <td>${list[i].nickname}</td>
                         <td>${list[i].age}</td>
                         <td>${list[i].sex}</td>
-                        <td>${list[i].isAdmin}</td>
-                        <td><a>修改</a></td>
+                        <td class="ADMIN">${list[i].isAdmin}</td>
+                        <td><a class="remove">删除</a></td>
                     </tr>
                 `
             }
             $('#tbody').html(TB);
+            $('#tbody').children().addClass("abc")
+            //是否是管理员
+            var storage = window.localStorage;
+            console.log(storage)
+            var admin = storage.isAdmin;
+            var nickname = storage.nickname;
+            console.log(admin)
+            if (admin == "false") {
+                $('#yonghu').attr('href', 'javascript:return false')
+                $('#yonghu').css('opacity', '0.2')
+                $('iframe').attr('src', 'html/aaa.html');
+                $('#adminname').html(nickname)
+            } else {
+                $('#adminname').html(nickname + "(管理员)");
 
-            //分页
+            }
+
+            //管理员删除不了管理员，包括自己
+            $('.ADMIN').each(function () {
+                if ($(this).html() == "true") {
+                    $(this).next().children().html("")
+                }
+            })
+
+            //获取页数
             pagination = `
                 <li >
                     <a href="#" aria-label="Previous" id = "left">
@@ -53,7 +129,7 @@ function getList(page, pageSize) {
                 </li>
             `
             $('#paginations').html(pagination);
-
+            $('#paginations').children().find("a").addClass("cba")
 
             //点击切换页面
             setTimeout(function () {
@@ -81,8 +157,24 @@ function getList(page, pageSize) {
                 $('#paginations li').eq(PAGE).addClass("active")
             }, 20);
 
+            //退出登录
+            $('#btn').click(function () {
+                location.href = "http://127.0.0.1:8080/html/login.html";
+                localStorage.clear()
+            })
+
         } else {
             alert(res.msg);
         }
     })
 }
+
+
+
+
+
+
+
+
+
+
