@@ -1,5 +1,39 @@
-<!-- <link rel="stylesheet" href="../css/lib/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/brand.css"> -->
-<h1 style="color: white">brand</h1>
-<!-- <script src="../js/jquery/jquery.min.js"></script>
-<script src="../js/brand.js"></script> -->
+<link rel="stylesheet" href="../css/lib/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/brand.css">
+<div class="brand-head">
+    <input type="button" id="brandBtn" value="新增品牌">
+    <div id="brandAdd">
+        <div class="logo">LOGO</div>
+        <select id="brandSelect" class="form-control">
+            <option disabled="disabled" selected value="">请选择品牌</option>
+            <option value="华为">华为</option>
+            <option value="小米">小米</option>
+            <option value="OPPO">OPPO</option>
+            <option value="vivo">vivo</option>
+        </select>
+        <button class="brandAdd">添加</button>
+    </div>
+</div>
+<table class="table table-hover ">
+    <thead>
+        <tr>
+            <th>序号</th>
+            <th>品牌LOGO</th>
+            <th>品牌名称</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody id="brand-tbody">
+        <!-- <tr class="brand-tr">
+            <td>1</td>
+            <td>2</td>
+            <td>苹果</td>
+            <td>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </td>
+        </tr> -->
+    </tbody>
+</table>
+<script src="../js/jquery/jquery.min.js"></script>
+<script src="../js/brand.js"></script>

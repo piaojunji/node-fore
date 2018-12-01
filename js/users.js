@@ -100,7 +100,9 @@ function getList(page, pageSize) {
                 $('#adminname').html(nickname)
             } else {
                 $('#adminname').html(nickname + "(管理员)");
-
+                $('#yonghu').click(function () {
+                    $('iframe').attr("src", "html/users.html")
+                })
             }
 
             //管理员删除不了管理员，包括自己
